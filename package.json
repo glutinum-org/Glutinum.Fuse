@@ -12,8 +12,6 @@
         "tests-watch": "concurrently -p none \"npm:tests-watch-*\"",
         "pretests": "npm run clean",
         "tests": "cd Tests && dotnet fable --outDir fableBuild && npx mocha fableBuild",
-        "prerelease": "npm run tests",
-        "release": ""
     },
     "dependencies": {
         "fuse.js": "^6.5.3"
