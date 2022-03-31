@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>
+        Fable bindings for npm https://www.npmjs.com/package/fuse.js/ package
+    </Description>
+    <Authors>Maxime Mangel</Authors>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+  <ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)\..\LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
+	</ItemGroup>
+  <!-- For SourceLink. See: https://github.com/dotnet/sourcelink#using-source-link-in-net-projects -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+  	<EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  	<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NpmDependencies>
+      <NpmPackage Name="fuse.js" Version="&gt;= 6.5.3" ResolutionStrategy="Max" />
+    </NpmDependencies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Glutinum.Fuse.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Ionide.KeepAChangelog.Tasks" Version="0.1.4" PrivateAssets="all" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

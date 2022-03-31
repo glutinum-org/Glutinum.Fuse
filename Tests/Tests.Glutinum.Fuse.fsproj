@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Node.Assert.fs" />
+    <Compile Include="Mocha.fs" />
+    <Compile Include="Globals.fs" />
+    <Compile Include="Tests.Glutinum.Fuse.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glutinum.Fuse\Glutinum.Fuse.fsproj" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

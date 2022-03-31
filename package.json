@@ -1,0 +1,27 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "postinstall": "dotnet tool restore",
+        "clean-tests": "npx shx rm -rf Tests/bin && npx shx rm -rf Tests/obj && npx shx rm -rf Tests/fableBuild",
+        "clean-package": "npx shx rm -rf Glutinum.Fuse/bin && npx shx rm -rf Glutinum.Fuse/obj",
+        "clean": "concurrently -p none 'npm:clean-*'",
+        "tests-watch-fable": "cd Tests && dotnet fable --outDir fableBuild --watch",
+        "tests-watch-mocha": "cd Tests && npx nodemon fableBuild --exec \"npx mocha fableBuild\"",
+        "pretests-watch": "npm run clean",
+        "tests-watch": "concurrently -p none \"npm:tests-watch-*\"",
+        "pretests": "npm run clean",
+        "tests": "cd Tests && dotnet fable --outDir fableBuild && npx mocha fableBuild",
+        "prerelease": "npm run tests",
+        "release": ""
+    },
+    "dependencies": {
+        "fuse.js": "^6.5.3"
+    },
+    "devDependencies": {
+        "concurrently": "^7.0.0",
+        "mocha": "^9.2.2",
+        "nodemon": "^2.0.15",
+        "shx": "^0.3.4"
+    }
+}
