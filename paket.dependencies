@@ -2,6 +2,6 @@ source https://api.nuget.org/v3/index.json
 
 storage: none
 
-nuget FSharp.Core ~> 5.0 redirects: force
+nuget FSharp.Core >= 5.0 redirects: force
 nuget Fable.Core
 nuget Microsoft.SourceLink.GitHub copy_local: true
