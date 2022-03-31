@@ -2,7 +2,32 @@
 
 Binding for npm https://www.npmjs.com/package/fuse.js/ package
 
+## Installation
+
+```
+# using nuget
+dotnet add package Glutinum.Fuse
+
+# or with paket
+paket add Glutinum.Fuse --project /path/to/project.fsproj
+```
+
+You also need to install `fuse.js` package.
+
+```
+# using Femto
+dotnet femto --resolve
+
+# using NPM
+npm install fuse.js
+
+# using yarn
+yarn add fuse.js
+```
+
 ## Usage
+
+Exemple 1:
 
 ```fs
 open Glutinum.Fuse
@@ -21,6 +46,7 @@ let result = fuse.search("apple")
 // { item: 'Apple', refIndex: 0 }
 ```
 
+Exemple 2:
 
 ```fs
 open Glutinum.Fuse
